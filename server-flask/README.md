@@ -6,5 +6,6 @@ aqui en el tutorial que habia leido nos habian puesto que hagamos un entoprno vi
 
 pip install update (para asegurarnos de que podremos instalar todos los paquetes)
 pip install Flask
+pip install flask-cors
 
 """
