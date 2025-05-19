@@ -1,10 +1,13 @@
 // src/components/MenuCards.jsx
-import React from "react";
+import React, { useState } from "react";
 import "./MenuCards.css";
+import AgregarCliente from "./functions/Agregar_Cliente";
+import AgregarServicio from "./functions/Agregar_Servicio";
+import KnowledgeBase from "./functions/KnowledgeBase";
 
 const cards = [
   {
-    id: "Agregar Cliente",
+    id: "Agregar_Cliente",
     title: "Menu para agregar un cliente",
     subtitle: "Agregar Cliente",
     description:
@@ -13,7 +16,7 @@ const cards = [
     colorClass: "card-top-red",
   },
   {
-    id: "Agregar Servicio",
+    id: "Agregar_Servicio",
     title: "Menu para agregar un servicio",
     subtitle: "Agregar Servicio",
     description:
@@ -22,7 +25,7 @@ const cards = [
     colorClass: "card-top-green",
   },
   {
-    id: "Knowledge Base",
+    id: "Knowledge_Base",
     title: "Knowledge Base",
     subtitle: "Knowledge Base",
     description:
@@ -33,6 +36,12 @@ const cards = [
 ];
 
 const MenuCards = () => {
+  const [selected, setSelected] = useState(null);
+
+  if (selected === "Agregar_Cliente") return <AgregarCliente />;
+  if (selected === "Agregar_Servicio") return <AgregarServicio />;
+  if (selected === "Knowledge_Base") return <KnowledgeBase />;
+
   return (
     <div className="card-container">
       {cards.map((card) => (
@@ -42,7 +51,7 @@ const MenuCards = () => {
             <h2 className="card-subtitle">{card.subtitle}</h2>
             <h3 className="card-title">{card.title}</h3>
             <p className="card-description">{card.description}</p>
-            <button className="card-button">{card.button}</button>
+            <button className="card-button" onClick={() => setSelected(card.id)}>{card.button}</button>
           </div>
         </div>
       ))}
