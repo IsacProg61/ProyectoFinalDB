@@ -1,0 +1,83 @@
+/* src/components/MenuCards.css */
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #f3f4f6;
+  height: 100vh; /* ocupar toda la altura */
+  width: 100vw;  /* ocupar toda la anchura */
+  box-sizing: border-box;
+}
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card-top {
+  height: 8px;
+  width: 100%;
+}
+
+.card-top-red {
+  background-color: #e63946;
+}
+
+.card-top-green {
+  background-color: #2a9d8f;
+}
+
+.card-top-blue {
+  background-color: #457b9d;
+}
+
+.card-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.card-subtitle {
+  font-size: 3rem;
+  font-weight: 300;
+  color: #2563eb;
+  text-align: center;
+  margin: 0;
+}
+
+.card-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 1rem 0 0.5rem;
+}
+
+.card-description {
+  font-size: 0.875rem;
+  color: #4b5563;
+  text-align: center;
+}
+
+.card-button {
+  margin-top: 1.5rem;
+  align-self: center;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  border: 1px solid #9ca3af;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.card-button:hover {
+  background-color: #f3f4f6;
+}
