@@ -11,6 +11,6 @@ npm -v
 ahora en la terminal estando dentro de la carpeta de recsin, vamos a poner el siguiente comando 
 
 npm install
+npm intsall react-dom
 npm run dev (esto corre el servidor)
-
 """
