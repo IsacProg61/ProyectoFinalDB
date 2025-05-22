@@ -1,4 +1,4 @@
-# REACT Native isntalacion 
+# REACT Native instalacion 
 lo que tenemos que hace4r es desde cada computadora instalar las dependencias, yo las tengo aqui en mi computadora (isaac), pero las pondre dentro del gitignore para que las ignore, ustedes deben de instalarlas de la siguinte manera 
 
 """
@@ -11,7 +11,7 @@ npm -v
 ahora en la terminal estando dentro de la carpeta de recsin, vamos a poner el siguiente comando 
 
 npm install
-npm intsall react-dom
-npm intall react_router_dom
+npm instsall react-dom
+npm install react_router_dom
 npm run dev (esto corre el servidor)
 """
