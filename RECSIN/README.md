@@ -12,5 +12,6 @@ ahora en la terminal estando dentro de la carpeta de recsin, vamos a poner el si
 
 npm install
 npm intsall react-dom
+npm intall react_router_dom
 npm run dev (esto corre el servidor)
 """

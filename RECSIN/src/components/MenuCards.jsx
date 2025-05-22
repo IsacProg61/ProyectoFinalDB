@@ -1,9 +1,7 @@
 // src/components/MenuCards.jsx
-import React, { useState } from "react";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./MenuCards.css";
-import AgregarCliente from "./functions/Agregar_Cliente";
-import AgregarServicio from "./functions/Agregar_Servicio";
-import KnowledgeBase from "./functions/KnowledgeBase";
 
 const cards = [
   {
@@ -36,11 +34,13 @@ const cards = [
 ];
 
 const MenuCards = () => {
-  const [selected, setSelected] = useState(null);
+  const navigate = useNavigate();
 
-  if (selected === "Agregar_Cliente") return <AgregarCliente />;
-  if (selected === "Agregar_Servicio") return <AgregarServicio />;
-  if (selected === "Knowledge_Base") return <KnowledgeBase />;
+  const handleNavigation = (id) => {
+    if (id === "Agregar_Cliente") navigate("/agregar-cliente");
+    else if (id === "Agregar_Servicio") navigate("/agregar-servicio");
+    else if (id === "Knowledge_Base") navigate("/knowledge-base");
+  };
 
   return (
     <div className="card-container">
@@ -51,7 +51,7 @@ const MenuCards = () => {
             <h2 className="card-subtitle">{card.subtitle}</h2>
             <h3 className="card-title">{card.title}</h3>
             <p className="card-description">{card.description}</p>
-            <button className="card-button" onClick={() => setSelected(card.id)}>{card.button}</button>
+            <button className="card-button" onClick={() => handleNavigation(card.id)}>{card.button}</button>
           </div>
         </div>
       ))}
