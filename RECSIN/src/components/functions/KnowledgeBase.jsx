@@ -1,12 +1,20 @@
-import React from "react";
-import "./Agregar_Cliente.css";
+import React from 'react';
+import './KnowledgeBase.css';
 
-const KnowledgeBase = () => {
+export default function KnowledgeBase() {
   return (
-    <div className="success-container">
-      <h1 className="success-text">Prueba pasada</h1>
+    <div className="kb-container">
+      <aside className="kb-sidebar">
+        <nav className="kb-nav">
+          <button className="kb-btn">Agregar</button>
+          <button className="kb-btn">Borrar</button>
+          <button className="kb-btn">Actualizar</button>
+        </nav>
+      </aside>
+
+      <main className="kb-main">
+        <img src="./images/logoColorRECSIN.png" alt="Descripción"/>
+      </main>
     </div>
   );
-};
-
-export default KnowledgeBase;
+}
