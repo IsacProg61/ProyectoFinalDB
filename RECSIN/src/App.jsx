@@ -4,7 +4,7 @@ import MenuCards from "./components/MenuCards";
 import AgregarCliente from "./components/functions/Agregar_Cliente";
 import AgregarServicio from "./components/functions/Agregar_Servicio";
 import KnowledgeBase from "./components/functions/KnowledgeBase";
-import All from "./components/functions/All"; // ajusta la ruta si está en otra carpeta
+import All from "./components/functions/All"; 
 
 
 function App() {

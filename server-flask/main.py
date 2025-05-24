@@ -13,8 +13,8 @@ def conectar_db():
     )
 
 # Ruta para consultar clientes
-@app.route("/index", methods=["GET"])
-def index():
+@app.route("/allClients", methods=["GET"])
+def allClients():
     try:
         conn = conectar_db()
         cursor = conn.cursor()

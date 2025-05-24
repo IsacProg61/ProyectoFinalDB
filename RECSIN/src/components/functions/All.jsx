@@ -7,7 +7,7 @@ const All = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:5000/index");
+        const response = await fetch("http://localhost:5000/allClients");
         if (!response.ok) {
           throw new Error("Error al obtener los datos");
         }
