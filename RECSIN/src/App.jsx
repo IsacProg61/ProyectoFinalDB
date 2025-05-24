@@ -4,6 +4,8 @@ import MenuCards from "./components/MenuCards";
 import AgregarCliente from "./components/functions/Agregar_Cliente";
 import AgregarServicio from "./components/functions/Agregar_Servicio";
 import KnowledgeBase from "./components/functions/KnowledgeBase";
+import All from "./components/functions/All"; // ajusta la ruta si está en otra carpeta
+
 
 function App() {
   return (
@@ -13,6 +15,7 @@ function App() {
         <Route path="/agregar-cliente" element={<AgregarCliente />} />
         <Route path="/agregar-servicio" element={<AgregarServicio />} />
         <Route path="/knowledge-base" element={<KnowledgeBase />} />
+        <Route path="/all" element={<All />} />
       </Routes>
     </Router>
   );
