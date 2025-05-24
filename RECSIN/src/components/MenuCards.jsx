@@ -43,7 +43,7 @@ const MenuCards = () => {
   };
 
   return (
-    <div className="card-container">
+    <div className="card-container" >
       {cards.map((card) => (
         <div key={card.id} className="card">
           <div className={`card-top ${card.colorClass}`}></div>
