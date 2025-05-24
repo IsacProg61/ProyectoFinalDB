@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './AgregarRegistro.css';
+import './AgregarKnowledge.css';
 
 export default function AgregarRegistro() {
   const [form, setForm] = useState({ cliente: '', servicio: '', fecha_salida: '', solucion: '' });
