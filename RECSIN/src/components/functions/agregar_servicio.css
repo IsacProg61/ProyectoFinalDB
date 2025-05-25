@@ -1,0 +1,57 @@
+/* Versión para escritorio */
+.as-form-container {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 32px 24px;
+  max-width: 800px;      /* Aumenta el ancho máximo para escritorio */
+  width: 100%;
+  margin: 40px auto;     /* Centrado horizontalmente */
+}
+
+.as-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.as-input {
+  width: 100%;
+  padding: 10px 12px;    /* Un poco más de padding para comodidad en pantalla grande */
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-top: 4px;
+  font-size: 1rem;
+}
+
+.as-btn {
+  background: #2b7cff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 0;       /* Padding ajustado */
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.as-btn:hover {
+  background: #1a5bb8;
+}
+
+/* Si deseas que el fondo de la página se extienda en pantalla completa */
+.as-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 100vh;
+  background: #fafdff;
+}
+
+/* Estilo para el mensaje */
+.mensaje {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 1.1rem;
+}
