@@ -7,9 +7,12 @@ CORS(app)
 
 def conectar_db():
     return oracledb.connect(
-        user="alumno",
-        password="alumno123",
-        dsn="localhost:1521/XEPDB1"
+        user="ADMIN",
+        password="ContraRECSIN61%",
+        dsn="recsin_high",
+        config_dir= r"C:\Users\isaac\OneDrive\Documentos\AaProyectoReactFlask\recsin_wallet",
+        wallet_location= r"C:\Users\isaac\OneDrive\Documentos\AaProyectoReactFlask\\recsin_wallet",
+        wallet_password="ContraRECSIN61%"
     )
 
 # Ruta para consultar clientes
