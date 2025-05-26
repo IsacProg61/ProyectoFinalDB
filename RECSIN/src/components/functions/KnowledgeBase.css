@@ -75,6 +75,7 @@
   overflow: auto;
   max-width: calc(100vw - 260px);
   max-height: 100vh;
+  color: black
 }
 
 .kb-form-container {
