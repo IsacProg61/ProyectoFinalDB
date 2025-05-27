@@ -3,6 +3,7 @@ import "./agregar_servicio.css"; // Asegúrate de que la ruta sea correcta
 
 const AgregarServicio = () => {
   const [formData, setFormData] = useState({
+    id_servicio: "",
     equipo: "",
     descripcion: "",
     fecha_entrega: "",
@@ -22,56 +23,82 @@ const AgregarServicio = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setCargando(true);
-    setMensaje("");
+  e.preventDefault();
+  setCargando(true);
+  setMensaje("");
 
-    const servicioData = {
-      ...formData,
-      id_empleado: parseInt(formData.id_empleado, 10),
-      costo: parseFloat(formData.costo),
-      id_sucursal: parseInt(formData.id_sucursal, 10)
-    };
+  if (!formData.id_empleado || !formData.id_sucursal) {
+    setMensaje("Todos los campos son obligatorios.");
+    setCargando(false);
+    return;
+  }
 
-    try {
-      const response = await fetch("/agregarServicio", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(servicioData)
-      });
-      const data = await response.json();
-      if (response.ok) {
-        setMensaje(data.message || "Servicio agregado exitosamente.");
-        setFormData({
-          equipo: "",
-          descripcion: "",
-          fecha_entrega: "",
-          id_empleado: "",
-          costo: "",
-          id_sucursal: ""
-        });
-      } else {
-        setMensaje(data.error || "Error al agregar el servicio.");
-      }
-    } catch (error) {
-      console.error("Error de conexión:", error);
-      setMensaje("Error de conexión.");
-    } finally {
-      setCargando(false);
-    }
+  const servicioData = {
+    id_servicio: formData.id_servicio,
+    equipo: formData.equipo,
+    descripcion: formData.descripcion,
+    fecha_entrega: formData.fecha_entrega,
+    id_empleado: formData.id_empleado,
+    costo: parseFloat(formData.costo),
+    id_sucursal: formData.id_sucursal
   };
+
+  console.log("Datos a enviar:", servicioData);
+
+  try {
+    const response = await fetch("http://localhost:5000/agregarServicio", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(servicioData)
+    });
+    const data = await response.json();
+    if (response.ok) {
+      setMensaje(data.message || "Servicio agregado exitosamente.");
+      setFormData({
+        id_servicio: "",
+        equipo: "",
+        descripcion: "",
+        fecha_entrega: "",
+        id_empleado: "",
+        costo: "",
+        id_sucursal: ""
+      });
+    } else {
+      setMensaje(data.error || "Error al agregar el servicio.");
+    }
+  } catch (error) {
+    console.error("Error de conexión:", error);
+    setMensaje("Error de conexión.");
+  } finally {
+    setCargando(false);
+  }
+};
+
 
   return (
     <div className="as-form-container">
       <h2>Agregar Servicio</h2>
       <form onSubmit={handleSubmit} className="as-form">
         <div className="form-group">
+          <label htmlFor="id_servicio">ID Servicio:</label>
+          <input
+            type="text"
+            id="id_servicio"
+            name="id_servicio"
+            placeholder="ID del servicio"
+            value={formData.id_servicio}
+            onChange={handleChange}
+            className="as-input"
+            required
+          />
+        </div>
+        <div className="form-group">
           <label htmlFor="equipo">Equipo:</label>
           <input
             type="text"
             id="equipo"
             name="equipo"
-            placeholder="Nombre del servicio"
+            placeholder="Nombre del equipo"
             value={formData.equipo}
             onChange={handleChange}
             className="as-input"
@@ -109,7 +136,7 @@ const AgregarServicio = () => {
         <div className="form-group">
           <label htmlFor="id_empleado">ID Empleado:</label>
           <input
-            type="number"
+            type="text"
             id="id_empleado"
             name="id_empleado"
             placeholder="Número de empleado"
@@ -123,10 +150,9 @@ const AgregarServicio = () => {
         <div className="form-group">
           <label htmlFor="costo">Costo:</label>
           <input
-            type="number"
+            type="text"
             id="costo"
             name="costo"
-            step="0.01"
             placeholder="Costo del servicio"
             value={formData.costo}
             onChange={handleChange}
@@ -138,7 +164,7 @@ const AgregarServicio = () => {
         <div className="form-group">
           <label htmlFor="id_sucursal">ID Sucursal:</label>
           <input
-            type="number"
+            type="text"
             id="id_sucursal"
             name="id_sucursal"
             placeholder="Identificador de sucursal"

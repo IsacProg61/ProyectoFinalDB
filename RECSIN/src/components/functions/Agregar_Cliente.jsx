@@ -24,7 +24,7 @@ const AgregarCliente = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/agregar", {
+      const response = await fetch("http://localhost:5000/agregarCliente", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -47,29 +47,43 @@ const AgregarCliente = () => {
   return (
     <div className="client-form-container">
       <aside className="side-bar">
-        <button
-          className="back-button"
-          onClick={() => window.history.back()}
-        >
+        <button className="back-button" onClick={() => window.history.back()}>
           Menu Principal
         </button>
       </aside>
 
       <div className="form-wrapper">
         <h2>Agregar Cliente</h2>
-        <form class="client-form">
-          <label for="id">ID</label>
-          <input type="text" id="id" name="id" />
+        <form className="client-form" onSubmit={handleSubmit}>
+          <label htmlFor="id_cliente">ID</label>
+          <input
+            type="text"
+            id="id_cliente"
+            name="id_cliente"
+            value={cliente.id_cliente}
+            onChange={handleChange}
+          />
 
-          <label for="name">Nombre Completo</label>
-          <input type="text" id="name" name="name" />
+          <label htmlFor="nombre_completo">Nombre Completo</label>
+          <input
+            type="text"
+            id="nombre_completo"
+            name="nombre_completo"
+            value={cliente.nombre_completo}
+            onChange={handleChange}
+          />
 
-          <label for="number">Número</label>
-          <input type="text" id="number" name="number" />
+          <label htmlFor="numero">Número</label>
+          <input
+            type="text"
+            id="numero"
+            name="numero"
+            value={cliente.numero}
+            onChange={handleChange}
+          />
 
           <button type="submit">Agregar Cliente</button>
         </form>
-        
       </div>
     </div>
   );
