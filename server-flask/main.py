@@ -10,8 +10,8 @@ def conectar_db():
         user="ADMIN",
         password="ContraRECSIN61%",
         dsn="recsin_high",
-        config_dir= r"C:\Users\isaac\OneDrive\Documentos\AaProyectoReactFlask\recsin_wallet",
-        wallet_location= r"C:\Users\isaac\OneDrive\Documentos\AaProyectoReactFlask\\recsin_wallet",
+        config_dir= r"C:\Users\isaac\OneDrive\Documentos\recsin_wallet",
+        wallet_location= r"C:\Users\isaac\OneDrive\Documentos\recsin_wallet",
         wallet_password="ContraRECSIN61%"
     )
 
