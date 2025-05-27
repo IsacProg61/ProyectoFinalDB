@@ -1,8 +1,0 @@
-recsin_high = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.mx-monterrey-1.oraclecloud.com))(connect_data=(service_name=g28365c6a8adbfd_recsin_high.adb.oraclecloud.com))(security=(ssl_server_cert_dn="CN=adb.mx-monterrey-1.oraclecloud.com, O=Oracle Corporation, L=Redwood City, ST=California, C=US")))
-
-recsin_low = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.mx-monterrey-1.oraclecloud.com))(connect_data=(service_name=g28365c6a8adbfd_recsin_low.adb.oraclecloud.com))(security=(ssl_server_cert_dn="CN=adb.mx-monterrey-1.oraclecloud.com, O=Oracle Corporation, L=Redwood City, ST=California, C=US")))
-
-recsin_medium = (description= (retry_count=20)(retry_delay=3)(address=(protocol=tcps)(port=1522)(host=adb.mx-monterrey-1.oraclecloud.com))(connect_data=(service_name=g28365c6a8adbfd_recsin_medium.adb.oraclecloud.com))(security=(ssl_server_cert_dn="CN=adb.mx-monterrey-1.oraclecloud.com, O=Oracle Corporation, L=Redwood City, ST=California, C=US")))
-
-
-
