@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
 import './KnowledgeBase.css';
 import { useNavigate } from 'react-router-dom';
-import AgregarRegistro from './AgregarKnowledge';
 import BorrarRegistro from './BorrarKnowledge';
 import ActualizarKnowledge from './ActualizarKnowledge';
+import AgregarKnowledge from './AgregarKnowledge';
+import VerKnowledge from './VerKnowledge';
 
 export default function KnowledgeBase() {
   const navigate = useNavigate();
-  const [formType, setFormType] = useState(null);
+  const [formType, setFormType] = useState('ver'); // Mostrar VER por defecto
 
   return (
     <div className="kb-container">
       <aside className="kb-sidebar">
         <nav className="kb-nav">
+          <button className="kb-btn" onClick={() => setFormType('ver')}>Ver</button>
           <button className="kb-btn" onClick={() => setFormType('agregar')}>Agregar</button>
           <button className="kb-btn" onClick={() => setFormType('borrar')}>Borrar</button>
           <button className="kb-btn" onClick={() => setFormType('actualizar')}>Actualizar</button>
@@ -20,10 +22,10 @@ export default function KnowledgeBase() {
         </nav>
       </aside>
       <main className="kb-main">
-        {formType === 'agregar' && <AgregarRegistro />}
+        {formType === 'ver' && <VerKnowledge />}
+        {formType === 'agregar' && <AgregarKnowledge />}
         {formType === 'borrar' && <BorrarRegistro />}
         {formType === 'actualizar' && <ActualizarKnowledge />}
-        {!formType && <img src="/RECSIN/src/components/functions/images/logoColorRECSIN.png" alt="Logo RECSIN" style={{ maxWidth: '100%', height: 'auto' }} />}
       </main>
     </div>
   );
