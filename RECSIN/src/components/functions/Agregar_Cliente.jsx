@@ -47,7 +47,7 @@ const AgregarCliente = () => {
   return (
     <div className="client-form-container">
       <aside className="side-bar">
-        <button className="back-button" onClick={() => window.history.back()}>
+        <button className="back-button-client" onClick={() => window.history.back()}>
           Menu Principal
         </button>
       </aside>

@@ -1,20 +1,21 @@
+/* ========== Container ========== */
 .client-form-container {
   display: flex;
-  min-height: 100vh;
   width: 100vw;
-  background: #fff; 
+  min-height: 100vh;
+  background: #fff;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
+/* ========== Sidebar ========== */
 .side-bar {
   width: 260px;
-  min-height: 100vh;
   max-width: 260px;
-  max-height: 100vh;
-  background-color:rgb(230, 57, 70);
+  min-height: 100vh;
+  background-color: rgb(230, 57, 70);
   color: white;
-  padding: 40px 20px 30px 20px;
+  padding: 40px 20px 30px;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -22,69 +23,77 @@
   overflow: hidden;
 }
 
-.back-button {
+/* ========== Back Button ========== */
+.back-button-client {
   background: rgb(190, 57, 70);
   color: #fff;
   border: none;
   padding: 12px 0;
-  font-size: 1.08rem; /* igual que kb-btn */
+  font-size: 1.08rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s, box-shadow 0.2s;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
   outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04); /* <-- Corregido aquí */
+  transition: background 0.2s, box-shadow 0.2s;
 }
 
-.back-button:hover {
+.back-button-client:hover {
   background: #8b0000;
 }
 
+/* ========== Form Wrapper ========== */
 .form-wrapper {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* vertical centering */
+  justify-content: center;
   align-items: center;
   padding: 40px;
   background-color: white;
+  color: black;
   max-width: calc(100vw - 260px);
   max-height: 100vh;
   box-sizing: border-box;
   overflow: auto;
-  color: black;
 }
 
 .form-wrapper h2 {
-  font-size: 1.5rem; /* igual que kb-title */
+  width: 100%;
+  margin-bottom: 2.5rem;
+  font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 1px;
-  margin-bottom: 2.5rem; /* mismo spacing kb-title */
   text-align: center;
-  width: 100%;
 }
 
+/* ========== Form ========== */
 .client-form {
   width: 100%;
   max-width: 400px;
+  background: white;
   display: flex;
   flex-direction: column;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* <-- Corregido aquí */
 }
 
 .client-form label {
-  font-weight: 500;
   margin-bottom: 6px;
+  font-size: 1rem;
+  font-weight: 500;
   color: #333;
-  font-size: 1rem; /* aproximado a kb-btn-menu tamaño */
 }
 
 .client-form input,
 .client-form select {
+  width: 100%;
   margin-bottom: 15px;
   padding: 12px;
-  font-size: 1rem; /* igual que label para coherencia */
+  font-size: 1rem;
   border: 1px solid red;
+  background-color: rgb(255, 255, 255);
   border-radius: 6px;
-  width: 100%;
   box-sizing: border-box;
   transition: border-color 0.3s ease;
 }
@@ -97,88 +106,17 @@
 
 .client-form button {
   padding: 12px 0;
-  font-size: 1.08rem; /* igual que back-button y kb-btn */
-  font-weight: 600;
+  font-size: 1.08rem;
+  font-weight: 700;
   background-color: rgb(190, 57, 70);
   color: white;
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
   transition: background-color 0.3s ease, box-shadow 0.2s ease;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
 }
 
 .client-form button:hover {
   background-color: #8b0000;
-}
-
-/* Responsive adaptaciones similares */
-@media (max-width: 900px) {
-  .client-form-container {
-    flex-direction: column;
-  }
-  .side-bar {
-    width: 100vw;
-    min-height: unset;
-    border-radius: 0 0 18px 18px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 20px 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    margin-bottom: 0;
-    gap: 10px;
-    max-height: 80px;
-  }
-  .back-button {
-    font-size: 1rem;
-    font-weight: 500;
-    margin-top: auto;
-    min-width: 100px;
-    padding: 10px 12px;
-    margin: 0 4px;
-  }
-  .form-wrapper {
-    max-width: 100vw;
-    max-height: calc(100vh - 80px);
-    padding: 40px 4vw;
-  }
-  .client-form {
-    max-width: 100%;
-  }
-  .client-form label,
-  .client-form input,
-  .client-form select {
-    font-size: 0.98rem;
-  }
-  .client-form button {
-    font-size: 0.98rem;
-    padding: 10px 12px;
-  }
-}
-
-@media (max-width: 600px) {
-  .side-bar {
-    padding: 10px 2vw;
-    border-radius: 0 0 12px 12px;
-    max-height: 60px;
-  }
-  .back-button {
-    font-size: 0.92rem;
-    padding: 8px 6px;
-    min-width: 80px;
-  }
-  .form-wrapper {
-    padding: 8px 2vw;
-    max-height: calc(100vh - 60px);
-  }
-  .client-form label,
-  .client-form input,
-  .client-form select {
-    font-size: 0.92rem;
-  }
-  .client-form button {
-    font-size: 0.92rem;
-    padding: 8px 6px;
-  }
 }
