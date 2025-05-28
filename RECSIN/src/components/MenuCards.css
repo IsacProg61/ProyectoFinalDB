@@ -1,5 +1,4 @@
 /* src/components/MenuCards.css */
-
 .card-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */

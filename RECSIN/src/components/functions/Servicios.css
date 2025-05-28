@@ -1,0 +1,37 @@
+.sv-form-container {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(42,157,143,0.08);
+  padding: 32px 24px;
+  max-width: 480px;
+  width: 100%;
+  margin: 40px auto;
+}
+
+.sv-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.sv-form input,
+.sv-form button {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.sv-form button {
+  background: #2a9d8f;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.sv-form button:hover {
+  background: #21867a;
+}

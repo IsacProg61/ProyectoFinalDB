@@ -17,6 +17,17 @@ def route_all_clients():
 @app.route("/agregarServicio", methods=["POST"])
 def route_agregar_servicio():
     return agregar_servicio(request)
+@app.route("/VerService", methods=["GET"])
+def route_ver_servicios():
+    return route_ver_servicios()
+
+@app.route("/actualizarService", methods=["PUT"])
+def route_actualizar_servicio():
+    return route_actualizar_servicio(request)
+
+@app.route("/BorrarService", methods=["DELETE"])
+def route_eliminar_servicio():
+    return route_eliminar_servicio(request)
 
 @app.route("/agregarCliente", methods=["POST"])
 def route_agregar_cliente():

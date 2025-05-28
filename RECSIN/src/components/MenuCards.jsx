@@ -8,26 +8,23 @@ const cards = [
     id: "Agregar_Cliente",
     title: "Menu para agregar un cliente",
     subtitle: "Agregar Cliente",
-    description:
-      "Agrega un cliente a la base de datos de clientes.",
+    description: "Agrega un cliente a la base de datos de clientes.",
     button: "Agregar Cliente",
     colorClass: "card-top-red",
   },
   {
-    id: "Agregar_Servicio",
-    title: "Menu para agregar un servicio",
-    subtitle: "Agregar Servicio",
-    description:
-      "Agrega un servicio a la base de datos de servicios.",
-    button: "Agregar Servicio",
+    id: "Servicios",
+    title: "Gestión de Servicios",
+    subtitle: "Servicios",
+    description: "Gestiona los servicios: ver, agregar, actualizar, eliminar.",
+    button: "Servicios",
     colorClass: "card-top-green",
   },
   {
     id: "Knowledge_Base",
     title: "Knowledge Base",
     subtitle: "Knowledge Base",
-    description:
-      "Knowledge Base para la gestión de servicios y clientes.",
+    description: "Knowledge Base para la gestión de servicios y clientes.",
     button: "Knowledge Base",
     colorClass: "card-top-blue",
   },
@@ -38,7 +35,7 @@ const MenuCards = () => {
 
   const handleNavigation = (id) => {
     if (id === "Agregar_Cliente") navigate("/agregar-cliente");
-    else if (id === "Agregar_Servicio") navigate("/agregar-servicio");
+    else if (id === "Servicios") navigate("/servicios");
     else if (id === "Knowledge_Base") navigate("/knowledge-base");
   };
 

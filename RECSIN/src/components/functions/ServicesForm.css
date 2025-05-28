@@ -1,0 +1,119 @@
+.service-form-container {
+  display: flex;
+  min-height: 100vh;
+  background: #fff;
+}
+
+.service-side-bar {
+  width: 220px;
+  background: #2a9d8f; /* Cambia a blanco para un look más limpio */
+  color: #2a9d8f;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 40px 20px 30px 20px;
+  min-height: 100vh;
+  border-right: 2px solid #e0e0e0;
+  position: sticky;
+  left: 0;
+  top: 0;
+}
+
+.service-back-button {
+  background: #fff;
+  color: #2a9d8f;
+  border: 2px solid #2a9d8f;
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 18px;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  box-shadow: none;
+}
+
+.service-back-button:hover,
+.service-back-button:focus {
+  background: #2a9d8f;
+  color: #2a9d8f;
+  border: 2px solid #21867a;
+  outline: none;
+}
+
+.service-form-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+  width: 100%;
+  background: #fff;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.service-form-wrapper h2 {
+  color: #2a9d8f;
+  margin-bottom: 24px;
+}
+
+.service-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 32px 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px 0 rgba(44, 62, 80, 0.07);
+}
+
+.service-form label {
+  font-weight: 500;
+  color: #2a9d8f;
+  margin-bottom: 4px;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+}
+
+.service-form input,
+.service-form select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background: #fafafa;
+}
+
+.service-form input:focus,
+.service-form select:focus {
+  outline: none;
+  border-color: #2a9d8f;
+  box-shadow: 0 0 0 2px #2a9d8f33;
+}
+
+.service-form button {
+  background: #2a9d8f;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 0;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 10px;
+}
+
+.service-form button:hover {
+  background: #21867a;
+}

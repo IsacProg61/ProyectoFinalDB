@@ -1,0 +1,12 @@
+.form-service {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+  margin: auto;
+}
+
+.form-service input, .form-service button {
+  padding: 8px;
+  font-size: 14px;
+}

@@ -1,0 +1,15 @@
+.services-list {
+  max-width: 900px;
+  margin: auto;
+}
+
+.services-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.services-list th, .services-list td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
