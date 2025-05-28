@@ -1,57 +1,207 @@
-/* Versión para escritorio */
-.as-form-container {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  padding: 32px 24px;
-  max-width: 800px;      /* Aumenta el ancho máximo para escritorio */
-  width: 100%;
-  margin: 40px auto;     /* Centrado horizontalmente */
+/* Reset completo */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-.as-form {
+/* Estructura principal con barra lateral */
+.service-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  background: #f5f5f5;
+}
+
+/* Barra lateral */
+.sidebar {
+  width: 260px;
+  min-height: 100vh;
+  background-color: rgb(57, 60, 230);
+  color: white;
+  padding: 40px 20px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
 }
 
-.as-input {
-  width: 100%;
-  padding: 10px 12px;    /* Un poco más de padding para comodidad en pantalla grande */
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  margin-top: 4px;
-  font-size: 1rem;
+.sidebar-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: center;
 }
 
-.as-btn {
-  background: #2b7cff;
+.back-button {
+  background: rgb(47, 50, 200);
   color: #fff;
   border: none;
-  border-radius: 6px;
-  padding: 12px 0;       /* Padding ajustado */
-  font-size: 1rem;
+  padding: 12px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s ease-in-out;
+  border-radius: 6px;
+  transition: background 0.3s;
+  margin-top: auto;
+  text-align: center;
+  width: 100%;
+}
+
+.back-button:hover {
+  background: rgb(37, 40, 180);
+}
+
+/* Contenido del formulario */
+.form-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  overflow-y: auto;
+}
+
+/* Título del formulario */
+.form-content h2 {
+  font-size: 1.8rem;
+  color: rgb(57, 60, 230);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Formulario principal */
+.as-form {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Estructura de campos */
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  flex: 1;
+  min-width: 250px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-size: 1rem;
+}
+
+/* Campos de entrada */
+.as-input {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.as-input:focus {
+  border-color: rgb(57, 60, 230);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(57, 60, 230, 0.1);
+}
+
+textarea.as-input {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Botón de enviar */
+.as-btn {
+  width: 100%;
+  max-width: 300px;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background-color: rgb(57, 60, 230);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 2rem auto 0;
+  display: block;
 }
 
 .as-btn:hover {
-  background: #1a5bb8;
+  background-color: rgb(47, 50, 200);
 }
 
-/* Si deseas que el fondo de la página se extienda en pantalla completa */
-.as-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 0;
-  min-height: 100vh;
-  background: #fafdff;
+.as-btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
 }
 
-/* Estilo para el mensaje */
+/* Mensajes */
 .mensaje {
-  margin-top: 15px;
   text-align: center;
-  font-size: 1.1rem;
+  margin-top: 1.5rem;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.mensaje.success {
+  color: #2e7d32;
+  background-color: #e8f5e9;
+}
+
+.mensaje.error {
+  color: #c62828;
+  background-color: #ffebee;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .service-container {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+    padding: 20px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .sidebar-title {
+    margin-bottom: 0;
+    font-size: 1.2rem;
+  }
+  
+  .back-button {
+    width: auto;
+    padding: 8px 16px;
+    margin-top: 0;
+  }
+  
+  .form-content {
+    padding: 20px;
+  }
+  
+  .as-form {
+    padding: 1.5rem;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
 }
