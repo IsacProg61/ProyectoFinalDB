@@ -99,32 +99,32 @@ ALTER TABLE sucursal
 
 
 ALTER TABLE encargos
-	ADD (CONSTRAINT R_5 FOREIGN KEY (id_cliente) REFERENCES cliente (id_cliente) ON DELETE SET NULL);
+	ADD (CONSTRAINT R_5 FOREIGN KEY (id_cliente) REFERENCES cliente (id_cliente) ON DELETE CASCADE);
 
 
 
 ALTER TABLE encargos
-	ADD (CONSTRAINT R_6 FOREIGN KEY (id_empleado) REFERENCES empleados (id_empleado) ON DELETE SET NULL);
+	ADD (CONSTRAINT R_6 FOREIGN KEY (id_empleado) REFERENCES empleados (id_empleado) ON DELETE CASCADE);
 
 
 
 ALTER TABLE servicios
-	ADD (CONSTRAINT R_4 FOREIGN KEY (id_empleado) REFERENCES empleados (id_empleado) ON DELETE SET NULL);
+	ADD (CONSTRAINT R_4 FOREIGN KEY (id_empleado) REFERENCES empleados (id_empleado) ON DELETE CASCADE);
 
 
 
 ALTER TABLE servicios
-	ADD (CONSTRAINT R_7 FOREIGN KEY (id_sucursal) REFERENCES sucursal (id_sucursal) ON DELETE SET NULL);
+	ADD (CONSTRAINT R_7 FOREIGN KEY (id_sucursal) REFERENCES sucursal (id_sucursal) ON DELETE CASCADE);
 
 
 
 ALTER TABLE servicios_hechos
-	ADD (CONSTRAINT R_1 FOREIGN KEY (id_cliente) REFERENCES cliente (id_cliente));
+	ADD (CONSTRAINT R_1 FOREIGN KEY (id_cliente) REFERENCES cliente (id_cliente) ON DELETE CASCADE);
 
 
 
 ALTER TABLE servicios_hechos
-	ADD (CONSTRAINT R_3 FOREIGN KEY (id_servicio) REFERENCES servicios (id_servicio));
+	ADD (CONSTRAINT R_3 FOREIGN KEY (id_servicio) REFERENCES servicios (id_servicio) ON DELETE CASCADE);
 
 -- DATOS DE PRUEBA
 
@@ -199,3 +199,5 @@ INSERT INTO encargos VALUES ('EN7', 'C7', 'Instalar drivers', 30, TO_DATE('2024-
 INSERT INTO encargos VALUES ('EN8', 'C8', 'Pantalla azul', 90, TO_DATE('2024-04-08','YYYY-MM-DD'), TO_DATE('2024-04-10','YYYY-MM-DD'), 'E8');
 INSERT INTO encargos VALUES ('EN9', 'C9', 'Falla disco', 100, TO_DATE('2024-04-09','YYYY-MM-DD'), TO_DATE('2024-04-11','YYYY-MM-DD'), 'E9');
 INSERT INTO encargos VALUES ('EN10', 'C10', 'Backup datos', 65, TO_DATE('2024-04-10','YYYY-MM-DD'), TO_DATE('2024-04-12','YYYY-MM-DD'), 'E10');
+
+-- PORFIN SE ACABO, FUE UN PROYECTO MUYU DIVERTIDO :)
