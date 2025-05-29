@@ -75,7 +75,12 @@ CREATE TABLE servicios_hechos
 
 
 ALTER TABLE servicios_hechos
-	ADD CONSTRAINT  XPKservicios_hechos PRIMARY KEY (id_cliente,id_servicio);
+  DROP CONSTRAINT R_3;
+
+ALTER TABLE servicios_hechos
+  ADD CONSTRAINT R_3 FOREIGN KEY (id_servicio)
+  REFERENCES servicios (id_servicio)
+  ON DELETE CASCADE;
 
 
 
