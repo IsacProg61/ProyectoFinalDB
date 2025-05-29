@@ -49,7 +49,7 @@ const AgregarServicio = () => {
         <input name="descripcion" value={formData.descripcion} onChange={handleChange} required />
 
         <label htmlFor="fecha_entrega">Fecha Entrega</label>
-        <input name="fecha_entrega" value={formData.fecha_entrega} onChange={handleChange} required />
+        <input type = "date" name="fecha_entrega" value={formData.fecha_entrega} onChange={handleChange} required />
 
         <label htmlFor="id_empleado">ID Empleado</label>
         <input name="id_empleado" value={formData.id_empleado} onChange={handleChange} required />
