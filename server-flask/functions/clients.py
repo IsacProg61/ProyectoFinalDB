@@ -63,3 +63,56 @@ def agregar_cliente(request):
     except Exception as e:
         print("Error en agregar_cliente:", e)  # Muestra el error real en consola
         return jsonify({"error": str(e)}), 500
+
+def borrar_cliente(request):
+    try:
+        data = request.get_json()
+        id_cliente = data.get('id_cliente')
+        if not id_cliente:
+            return jsonify({"error": "Falta el id_cliente"}), 400
+
+        conn = conectar_db()
+        cursor = conn.cursor()
+        cursor.execute(
+            f"DELETE FROM cliente WHERE id_cliente = '{id_cliente}'",
+        )
+        conn.commit()
+        filas_afectadas = cursor.rowcount
+        cursor.close()
+        conn.close()
+
+        if filas_afectadas == 0:
+            return jsonify({"error": "No se encontró el cliente"}), 404
+
+        return jsonify({"message": "Cliente borrado exitosamente"}), 200
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+def actualizar_cliente(request):
+    try:
+        data = request.get_json()
+        id_cliente = data.get('id_cliente')
+        nombre_completo = data.get('nombre_completo')
+        numero = data.get('numero')
+
+        if not id_cliente or not nombre_completo or not numero:
+            return jsonify({"error": "Faltan datos para actualizar"}), 400
+
+        conn = conectar_db()
+        cursor = conn.cursor()
+        cursor.execute(
+            f"UPDATE cliente SET nombre_completo = '{nombre_completo}', numero = {numero} WHERE id_cliente = '{id_cliente}'"
+        )
+        conn.commit()
+        filas_afectadas = cursor.rowcount
+        cursor.close()
+        conn.close()
+
+        if filas_afectadas == 0:
+            return jsonify({"error": "No se encontró el cliente para actualizar"}), 404
+
+        return jsonify({"message": "Cliente actualizado exitosamente"}), 200
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500

@@ -5,11 +5,11 @@ import "./MenuCards.css";
 
 const cards = [
   {
-    id: "Agregar_Cliente",
-    title: "Menu para agregar un cliente",
-    subtitle: "Agregar Cliente",
-    description: "Agrega un cliente a la base de datos de clientes.",
-    button: "Agregar Cliente",
+    id: "Cliente",
+    title: "Menu para gestionar clientes",
+    subtitle: "Cliente",
+    description: "Gestion a clientes",
+    button: "Clientes",
     colorClass: "card-top-red",
   },
   {
@@ -34,7 +34,7 @@ const MenuCards = () => {
   const navigate = useNavigate();
 
   const handleNavigation = (id) => {
-    if (id === "Agregar_Cliente") navigate("/agregar-cliente");
+    if (id === "Cliente") navigate("/cliente");
     else if (id === "Servicios") navigate("/servicios");
     else if (id === "Knowledge_Base") navigate("/knowledge-base");
   };

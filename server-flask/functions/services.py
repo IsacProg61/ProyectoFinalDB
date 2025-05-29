@@ -50,7 +50,7 @@ def ver_servicios():
         conn = conectar_db()
         cursor = conn.cursor()
         cursor.execute("""
-            SELECT id_servicio, equipo, descripcion, TO_CHAR(fecha_entrega, 'YYYY-MM-DD'), id_empleado, costo, id_sucursal
+            SELECT *
             FROM servicios
             ORDER BY fecha_entrega DESC
         """)
@@ -87,20 +87,13 @@ def actualizar_servicio(request):
 
         conn = conectar_db()
         cursor = conn.cursor()
-        cursor.execute("""
+        cursor.execute(f"""
             UPDATE servicios
-            SET equipo = :equipo, descripcion = :descripcion, fecha_entrega = TO_DATE(:fecha_entrega, 'YYYY-MM-DD'),
-                id_empleado = :id_empleado, costo = :costo, id_sucursal = :id_sucursal
-            WHERE id_servicio = :id_servicio
-        """, {
-            "equipo": equipo,
-            "descripcion": descripcion,
-            "fecha_entrega": fecha_entrega,
-            "id_empleado": id_empleado,
-            "costo": costo,
-            "id_sucursal": id_sucursal,
-            "id_servicio": id_servicio
-        })
+            SET equipo = '{equipo}', descripcion = '{descripcion}', fecha_entrega = TO_DATE('{fecha_entrega}', 'YYYY-MM-DD'),
+                id_empleado = '{id_empleado}', costo = '{costo}', id_sucursal = '{id_sucursal}'
+            WHERE id_servicio = '{id_servicio}'
+        """)
+        
 
         if cursor.rowcount == 0:
             return jsonify({"error": "No se encontró el servicio para actualizar."}), 404
@@ -123,7 +116,7 @@ def eliminar_servicio(request):
 
         conn = conectar_db()
         cursor = conn.cursor()
-        cursor.execute("DELETE FROM servicios WHERE id_servicio = :id_servicio", {"id_servicio": id_servicio})
+        cursor.execute(f"DELETE FROM servicios WHERE id_servicio = '{id_servicio}'")
 
         if cursor.rowcount == 0:
             return jsonify({"error": "No se encontró el servicio a eliminar."}), 404

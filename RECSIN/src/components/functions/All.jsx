@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import './VerClientes.css';
+import './Agregar_Cliente.css'; 
 
 const All = () => {
   const [clientes, setClientes] = useState([]);
@@ -22,32 +24,36 @@ const All = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Todos los Clientes</h1>
+    <div className="form-wrapper" style={{ maxWidth: 600, overflowX: "auto" }}>
+      <h1 style={{ textAlign: "center", color: "black", fontSize: "1.1rem", marginBottom: 18 }}>
+        Todos los Clientes
+      </h1>
 
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <p style={{ color: "red", textAlign: "center", fontSize: "0.95rem" }}>{error}</p>}
 
       {clientes.length > 0 ? (
-        <table border="1" cellPadding="8" style={{ marginTop: "20px" }}>
-          <thead>
-            <tr>
-              <th>ID Cliente</th>
-              <th>Nombre Completo</th>
-              <th>Número</th>
-            </tr>
-          </thead>
-          <tbody>
-            {clientes.map((cliente) => (
-              <tr key={cliente.id_cliente}>
-                <td>{cliente.id_cliente}</td>
-                <td>{cliente.nombre_completo}</td>
-                <td>{cliente.numero}</td>
+        <div style={{ width: "100%", overflowX: "auto" }}>
+          <table className="kb-table" style={{ fontSize: "0.93rem", minWidth: 420 }}>
+            <thead>
+              <tr>
+                <th>ID Cliente</th>
+                <th>Nombre Completo</th>
+                <th>Número</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {clientes.map((cliente) => (
+                <tr key={cliente.id_cliente}>
+                  <td>{cliente.id_cliente}</td>
+                  <td>{cliente.nombre_completo}</td>
+                  <td>{cliente.numero}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       ) : (
-        <p>No hay clientes para mostrar.</p>
+        <p style={{ textAlign: "center", color: "#555", fontSize: "0.95rem" }}>No hay clientes para mostrar.</p>
       )}
     </div>
   );

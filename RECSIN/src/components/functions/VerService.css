@@ -1,15 +1,41 @@
 .services-list {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 24px 16px;
   max-width: 900px;
+  width: 90%;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 60vh;
 }
 
-.services-list table {
+.kb-table {
   width: 100%;
   border-collapse: collapse;
+  margin-top: 18px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
-
-.services-list th, .services-list td {
-  border: 1px solid #ccc;
-  padding: 8px;
-  text-align: center;
+.kb-table th, .kb-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: left;
+  font-size: 1rem;
+}
+.kb-table th {
+  background: #f5f8ff;
+  color: #1a237e;
+  font-weight: bold;
+}
+.kb-table tr:last-child td {
+  border-bottom: none;
+}
+.kb-table td {
+  vertical-align: top;
+  word-break: break-word;
 }

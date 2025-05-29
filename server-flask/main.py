@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from functions.clients import allClients, agregar_cliente
-from functions.services import agregar_servicio
+from functions.clients import allClients, agregar_cliente, borrar_cliente, actualizar_cliente
+from functions.services import agregar_servicio, ver_servicios, actualizar_servicio, eliminar_servicio
 from functions.db import conectar_db
 from functions.knowledge import agregar_knowledge, borrar_knowledge, actualizar_knowledge, ver_knowledge
 
@@ -17,17 +17,18 @@ def route_all_clients():
 @app.route("/agregarServicio", methods=["POST"])
 def route_agregar_servicio():
     return agregar_servicio(request)
+
 @app.route("/VerService", methods=["GET"])
 def route_ver_servicios():
-    return route_ver_servicios()
+    return ver_servicios()
 
 @app.route("/actualizarService", methods=["PUT"])
 def route_actualizar_servicio():
-    return route_actualizar_servicio(request)
+    return actualizar_servicio(request)
 
 @app.route("/BorrarService", methods=["DELETE"])
 def route_eliminar_servicio():
-    return route_eliminar_servicio(request)
+    return eliminar_servicio(request)
 
 @app.route("/agregarCliente", methods=["POST"])
 def route_agregar_cliente():
@@ -47,7 +48,15 @@ def route_actualizar_knowledge():
 
 @app.route("/verKnowledge", methods=["GET"])
 def route_ver_knowledge():
-    return ver_knowledge(request)
+    return ver_knowledge()
+
+@app.route("/borrarCliente", methods=["DELETE"])
+def route_borrar_cliente():
+    return borrar_cliente(request)
+
+@app.route("/actualizarCliente", methods=["PUT"])
+def route_actualizar_cliente():
+    return actualizar_cliente(request)
 
 
 if __name__ == "__main__":

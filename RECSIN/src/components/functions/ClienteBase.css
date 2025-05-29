@@ -1,0 +1,74 @@
+/* ========== Container ========== */
+.cliente-container {
+  display: flex;
+  width: 100vw;
+  min-height: 100vh;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* ========== Sidebar ========== */
+.cliente-sidebar {
+  width: 260px;
+  max-width: 260px;
+  min-height: 100vh;
+  background-color: rgb(230, 57, 70);
+  color: white;
+  padding: 40px 20px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  box-shadow: 2px 0 8px rgba(202, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+/* ========== Nav ========== */
+.cliente-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ========== Buttons ========== */
+.cliente-btn {
+  background: rgb(190, 57, 70);
+  color: #fff;
+  border: none;
+  padding: 20px;
+  font-size: 1.08rem;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.cliente-btn:hover {
+  background: #8b0000;
+}
+
+.cliente-btn-menu {
+  margin-top: auto;
+  background: rgb(190, 57, 70);
+}
+
+.cliente-btn-menu:hover {
+  background: #8b0000;
+}
+
+.cliente-main-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  background: #fafdff;
+  padding: 40px;
+  box-sizing: border-box;
+  overflow: auto;
+  max-width: calc(100vw - 260px);
+  max-height: 100vh;
+  color: black
+}

@@ -1,119 +1,245 @@
-.service-form-container {
+.services-container {
   display: flex;
   min-height: 100vh;
-  background: #fff;
+  height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.service-side-bar {
+.services-sidebar {
   width: 220px;
-  background: #2a9d8f; /* Cambia a blanco para un look más limpio */
-  color: #2a9d8f;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 40px 20px 30px 20px;
   min-height: 100vh;
-  border-right: 2px solid #e0e0e0;
-  position: sticky;
-  left: 0;
-  top: 0;
-}
-
-.service-back-button {
-  background: #fff;
-  color: #2a9d8f;
-  border: 2px solid #2a9d8f;
-  border-radius: 6px;
-  padding: 12px 24px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  margin-bottom: 18px;
-  transition: background 0.2s, color 0.2s, border 0.2s;
-  box-shadow: none;
-}
-
-.service-back-button:hover,
-.service-back-button:focus {
   background: #2a9d8f;
-  color: #2a9d8f;
-  border: 2px solid #21867a;
-  outline: none;
-}
-
-.service-form-wrapper {
-  flex: 1;
+  color: #fff;
+  padding: 40px 20px 30px 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 0;
-  width: 100%;
-  background: #fff;
-  min-height: 100vh;
-  box-sizing: border-box;
+  align-items: stretch;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.04);
+  overflow: hidden;
+  max-width: 220px;
+  max-height: 100vh;
+  height: 100vh;
 }
 
-.service-form-wrapper h2 {
-  color: #2a9d8f;
-  margin-bottom: 24px;
+.services-title {
+  margin-bottom: 2.5rem;
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 
-.service-form {
+.services-nav {
   display: flex;
   flex-direction: column;
   gap: 18px;
   width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
-  background: #fff;
-  padding: 32px 24px;
-  border-radius: 12px;
-  box-shadow: 0 2px 16px 0 rgba(44, 62, 80, 0.07);
+  align-items: stretch;
+  flex: 1;
+  margin-bottom: 40px;
+  justify-content: center;
 }
 
-.service-form label {
-  font-weight: 500;
+.services-btn, .services-btn-menu {
+  background: #fff;
   color: #2a9d8f;
-  margin-bottom: 4px;
+  border: none;
+  padding: 12px 0;
+  font-size: 1.08rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  outline: none;
+  border-radius: 5px;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.services-btn:hover, .services-btn-menu:hover {
+  background: #e0f7f5;
+}
+
+.services-btn-menu {
+  margin-top: auto;
+  background: #2a9d8f;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.services-btn-menu:hover {
+  background: #2a9d8f;
+}
+
+.services-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 70%;
+  background: #f4f4f4;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+  max-width: calc(100vw - 220px);
+  max-height: 100vh;
+  color: black;
+}
+
+/* Moderno y consistente para el formulario de servicios */
+
+.services-form {
   display: flex;
   flex-direction: column;
-  font-size: 1rem;
-}
-
-.service-form input,
-.service-form select {
+  align-items: center;
+  gap: 8px; /* Menos espacio entre campos */
   width: 100%;
-  padding: 10px 12px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-  margin-top: 4px;
-  margin-bottom: 8px;
-  transition: border-color 0.2s, box-shadow 0.2s;
-  background: #fafafa;
+  max-width: 300px; /* Más angosto */
+  margin: 0 auto;
+  background: #fff;
+  padding: 14px 8px; /* Menos padding */
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
-.service-form input:focus,
-.service-form select:focus {
-  outline: none;
-  border-color: #2a9d8f;
-  box-shadow: 0 0 0 2px #2a9d8f33;
+.services-form label {
+  width: 100%;
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 0.97rem; /* Más pequeño */
 }
 
-.service-form button {
+.services-input {
+  width: 100%;
+  font-size: 0.97rem;
+  padding: 7px 8px; /* Más pequeño */
+  margin-top: 2px;
+  margin-bottom: 0;
+  border-radius: 5px;
+  border: 1px solid #2a9d8f;
+  background: #f8f8f8;
+  color: #222;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+  text-align: center;
+}
+
+.services-btn {
   background: #2a9d8f;
   color: #fff;
   border: none;
-  border-radius: 6px;
-  padding: 12px 0;
-  font-size: 1rem;
-  font-weight: bold;
+  padding: 10px 0;
+  font-size: 0.97rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s;
-  margin-top: 10px;
+  border-radius: 5px;
+  width: 100%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  transition: background 0.2s, box-shadow 0.2s;
+  margin-top: 8px;
 }
 
-.service-form button:hover {
-  background: #21867a;
+.services-title {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  margin-top: 0;
+}
+
+.form-wrapper {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+
+@media (max-width: 900px) {
+  .services-container {
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    max-width: 100vw;
+    max-height: 100vh;
+  }
+  .services-sidebar {
+    width: 100vw;
+    min-height: unset;
+    border-radius: 0 0 18px 18px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    margin-bottom: 0;
+    gap: 10px;
+    overflow: hidden;
+    max-width: 100vw;
+    max-height: 80px;
+    height: 80px;
+  }
+  .services-title {
+    margin-bottom: 0;
+    margin-right: 18px;
+    font-size: 1.1rem;
+  }
+  .services-nav {
+    flex-direction: row;
+    gap: 10px;
+    width: auto;
+    margin-bottom: 0;
+    align-items: center;
+    flex: unset;
+    justify-content: flex-start;
+  }
+  .services-btn, .services-btn-menu {
+    width: auto;
+    min-width: 100px;
+    font-size: 0.98rem;
+    padding: 10px 12px;
+    margin: 0 4px;
+  }
+  .services-btn-menu {
+    margin-top: 0;
+  }
+  .services-main {
+    padding: 16px 4vw;
+    min-height: 60vh;
+    max-width: 100vw;
+    max-height: calc(100vh - 80px);
+  }
+}
+
+@media (max-width: 600px) {
+  .services-sidebar {
+    padding: 10px 2vw;
+    border-radius: 0 0 12px 12px;
+    max-height: 60px;
+    height: 60px;
+  }
+  .services-btn, .services-btn-menu {
+    font-size: 0.92rem;
+    padding: 8px 6px;
+  }
+  .services-main {
+    padding: 8px 2vw;
+  }
+  .services-form {
+    padding: 10px 2vw;
+    max-width: 98vw;
+  }
+  .form-wrapper {
+    max-width: 98vw;
+    padding: 0;
+  }
 }

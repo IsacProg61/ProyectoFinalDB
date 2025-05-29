@@ -34,79 +34,88 @@ const ActualizarService = () => {
   };
 
   return (
-    <div className="service-form-wrapper">
-      <h2>Actualizar Servicio</h2>
-      <form className="service-form" onSubmit={handleSubmit}>
-        <label>
-          ID Servicio:
-          <input
-            className="service-input"
-            name="id_servicio"
-            value={form.id_servicio}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <label>
-          Equipo:
-          <input
-            className="service-input"
-            name="equipo"
-            value={form.equipo}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Descripción:
-          <input
-            className="service-input"
-            name="descripcion"
-            value={form.descripcion}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Fecha Entrega:
-          <input
-            className="service-input"
-            type="date"
-            name="fecha_entrega"
-            value={form.fecha_entrega}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          ID Empleado:
-          <input
-            className="service-input"
-            name="id_empleado"
-            value={form.id_empleado}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Costo:
-          <input
-            className="service-input"
-            name="costo"
-            value={form.costo}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          ID Sucursal:
-          <input
-            className="service-input"
-            name="id_sucursal"
-            value={form.id_sucursal}
-            onChange={handleChange}
-          />
-        </label>
-        <button type="submit" className="service-btn" disabled={cargando} style={{ marginTop: 16 }}>
-          Actualizar
-        </button>
-        {mensaje && <div style={{ color: '#2a9d8f', marginTop: 12, textAlign: 'center' }}>{mensaje}</div>}
-      </form>
+    <div className="services-main">
+      <div className="form-wrapper">
+        <h2 className="services-title">Actualizar Servicio</h2>
+        <form className="services-form" onSubmit={handleSubmit}>
+          <label>
+            ID Servicio:
+            <input
+              className="services-input"
+              name="id_servicio"
+              value={form.id_servicio}
+              onChange={handleChange}
+              required
+              disabled={cargando}
+            />
+          </label>
+          <label>
+            Equipo:
+            <input
+              className="services-input"
+              name="equipo"
+              value={form.equipo}
+              onChange={handleChange}
+              disabled={cargando}
+            />
+          </label>
+          <label>
+            Descripción:
+            <input
+              className="services-input"
+              name="descripcion"
+              value={form.descripcion}
+              onChange={handleChange}
+              disabled={cargando}
+            />
+          </label>
+          <label>
+            Fecha Entrega:
+            <input
+              className="services-input"
+              type="date"
+              name="fecha_entrega"
+              value={form.fecha_entrega}
+              onChange={handleChange}
+              disabled={cargando}
+            />
+          </label>
+          <label>
+            ID Empleado:
+            <input
+              className="services-input"
+              name="id_empleado"
+              value={form.id_empleado}
+              onChange={handleChange}
+              disabled={cargando}
+            />
+          </label>
+          <label>
+            Costo:
+            <input
+              className="services-input"
+              name="costo"
+              value={form.costo}
+              onChange={handleChange}
+              disabled={cargando}
+            />
+          </label>
+          <label>
+            ID Sucursal:
+            <input
+              className="services-input"
+              name="id_sucursal"
+              value={form.id_sucursal}
+              onChange={handleChange}
+              disabled={cargando}
+            />
+          </label>
+          <button type="submit" className="services-btn" disabled={cargando} style={{ marginTop: 16 }}>
+            Actualizar
+          </button>
+          {mensaje && <div style={{ color: '#2a9d8f', marginTop: 12, textAlign: 'center' }}>{mensaje}</div>}
+        </form>
+      </div>
     </div>
   );
 };

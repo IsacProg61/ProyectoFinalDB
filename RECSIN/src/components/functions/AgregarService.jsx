@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './ServicesForm.css';
 
-const AgregarServicio = () => {
-  const [formData, setFormData] = useState({
+export default function AgregarServicio() {
+  const [form, setForm] = useState({
     id_servicio: "",
     equipo: "",
     descripcion: "",
@@ -11,60 +11,134 @@ const AgregarServicio = () => {
     costo: "",
     id_sucursal: ""
   });
-  const [mensaje, setMensaje] = useState("");
+  const [mensaje, setMensaje] = useState('');
   const [cargando, setCargando] = useState(false);
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async e => {
     e.preventDefault();
     setCargando(true);
+    setMensaje('');
     try {
-      const res = await fetch('http://localhost:5000/agregarServicio', {
+      const response = await fetch('http://localhost:5000/agregarServicio', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(form),
       });
-      const data = await res.json();
-      setMensaje(data.message || 'Servicio agregado correctamente');
+      const data = await response.json();
+      if (response.ok) {
+        setMensaje(data.message || 'Servicio agregado correctamente.');
+        setForm({
+          id_servicio: "",
+          equipo: "",
+          descripcion: "",
+          fecha_entrega: "",
+          id_empleado: "",
+          costo: "",
+          id_sucursal: ""
+        });
+      } else {
+        setMensaje(data.error || 'Error al agregar el servicio.');
+      }
     } catch (error) {
-      setMensaje('Error al agregar el servicio');
+      setMensaje('Error de conexión.');
+    } finally {
+      setCargando(false);
     }
-    setCargando(false);
   };
 
   return (
-    <div className="service-form-wrapper">
-      <h2>Agregar Servicio</h2>
-      <form className="service-form" onSubmit={handleSubmit}>
-        <label htmlFor="id_servicio">ID Servicio</label>
-        <input name="id_servicio" value={formData.id_servicio} onChange={handleChange} required />
-
-        <label htmlFor="equipo">Equipo</label>
-        <input name="equipo" value={formData.equipo} onChange={handleChange} required />
-
-        <label htmlFor="descripcion">Descripción</label>
-        <input name="descripcion" value={formData.descripcion} onChange={handleChange} required />
-
-        <label htmlFor="fecha_entrega">Fecha Entrega</label>
-        <input type = "date" name="fecha_entrega" value={formData.fecha_entrega} onChange={handleChange} required />
-
-        <label htmlFor="id_empleado">ID Empleado</label>
-        <input name="id_empleado" value={formData.id_empleado} onChange={handleChange} required />
-
-        <label htmlFor="costo">Costo</label>
-        <input name="costo" value={formData.costo} onChange={handleChange} required />
-
-        <label htmlFor="id_sucursal">ID Sucursal</label>
-        <input name="id_sucursal" value={formData.id_sucursal} onChange={handleChange} required />
-
-        <button type="submit" disabled={cargando}>Agregar</button>
-      </form>
-      {mensaje && <div style={{ marginTop: 16, color: "#2a9d8f" }}>{mensaje}</div>}
+    <div className="services-main">
+      <div className="form-wrapper">
+        <h2 className="services-title">Agregar Servicio</h2>
+        <form className="services-form" onSubmit={handleSubmit}>
+          <label>
+            ID Servicio:
+            <input
+              className="services-input"
+              name="id_servicio"
+              value={form.id_servicio}
+              onChange={handleChange}
+              required
+              disabled={cargando}
+            />
+          </label>
+          <label>
+            Equipo:
+            <input
+              className="services-input"
+              name="equipo"
+              value={form.equipo}
+              onChange={handleChange}
+              required
+              disabled={cargando}
+            />
+          </label>
+          <label>
+            Descripción:
+            <input
+              className="services-input"
+              name="descripcion"
+              value={form.descripcion}
+              onChange={handleChange}
+              required
+              disabled={cargando}
+            />
+          </label>
+          <label>
+            Fecha Entrega:
+            <input
+              className="services-input"
+              type="date"
+              name="fecha_entrega"
+              value={form.fecha_entrega}
+              onChange={handleChange}
+              required
+              disabled={cargando}
+            />
+          </label>
+          <label>
+            ID Empleado:
+            <input
+              className="services-input"
+              name="id_empleado"
+              value={form.id_empleado}
+              onChange={handleChange}
+              required
+              disabled={cargando}
+            />
+          </label>
+          <label>
+            Costo:
+            <input
+              className="services-input"
+              name="costo"
+              value={form.costo}
+              onChange={handleChange}
+              required
+              disabled={cargando}
+            />
+          </label>
+          <label>
+            ID Sucursal:
+            <input
+              className="services-input"
+              name="id_sucursal"
+              value={form.id_sucursal}
+              onChange={handleChange}
+              required
+              disabled={cargando}
+            />
+          </label>
+          <button type="submit" className="services-btn" style={{ marginTop: 16 }} disabled={cargando}>
+            {cargando ? 'Agregando...' : 'Agregar'}
+          </button>
+          {mensaje && (
+            <div style={{ color: '#2a9d8f', marginTop: 12, textAlign: 'center' }}>{mensaje}</div>
+          )}
+        </form>
+      </div>
     </div>
   );
-};
-
-export default AgregarServicio;
+}

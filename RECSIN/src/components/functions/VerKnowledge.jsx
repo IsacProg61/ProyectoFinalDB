@@ -40,8 +40,8 @@ export default function VerKnowledge() {
             <thead>
               <tr>
                 <th>Cliente</th>
-                <th>Servicio</th>
                 <th>Fecha Salida</th>
+                <th>Servicio</th>
                 <th style={{ color: '#2b7cff', fontWeight: 'bold' }}>Procedimiento</th>
               </tr>
             </thead>

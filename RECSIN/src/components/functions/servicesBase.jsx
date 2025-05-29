@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './KnowledgeBase.css';
 import { useNavigate } from 'react-router-dom';
 import VerService from './VerService';
 import AgregarServicio from './Agregar_Servicio';
@@ -11,19 +10,21 @@ export default function Servicios() {
   const [menu, setMenu] = useState('servicesbase');
 
   return (
-    <div className="kb-container">
-      <aside className="kb-sidebar">
-        <div className="kb-title">Servicios</div>
-        <nav className="kb-nav">
-          <button className="kb-btn" onClick={() => setMenu('servicesbase')}>ServicesBase</button>
-          <button className="kb-btn" onClick={() => setMenu('ver')}>Ver</button>
-          <button className="kb-btn" onClick={() => setMenu('agregar')}>Agregar</button>
-          <button className="kb-btn" onClick={() => setMenu('actualizar')}>Actualizar</button>
-          <button className="kb-btn" onClick={() => setMenu('eliminar')}>Eliminar</button>
-          <button className="kb-btn kb-btn-menu" onClick={() => navigate('/')}>Volver al Menú Principal</button>
+    <div className="services-container">
+      <aside className="services-sidebar">
+        <div className="services-title">Servicios</div>
+        <nav className="services-nav">
+          <button className="services-btn" onClick={() => setMenu('servicesbase')}>ServicesBase</button>
+          <button className="services-btn" onClick={() => setMenu('ver')}>Ver</button>
+          <button className="services-btn" onClick={() => setMenu('agregar')}>Agregar</button>
+          <button className="services-btn" onClick={() => setMenu('actualizar')}>Actualizar</button>
+          <button className="services-btn" onClick={() => setMenu('eliminar')}>Eliminar</button>
         </nav>
+        <button className="services-btn-menu" onClick={() => navigate('/')}>
+          Volver al Menú Principal
+        </button>
       </aside>
-      <main className="kb-main">
+      <main className="services-main">
         {menu === 'servicesbase' && (
           <div>
             <h2>Bienvenido a la gestión de servicios</h2>

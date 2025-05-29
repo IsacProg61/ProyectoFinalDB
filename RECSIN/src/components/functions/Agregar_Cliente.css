@@ -23,12 +23,12 @@
   overflow: hidden;
 }
 
-/* ========== Back Button ========== */
-.back-button-client {
+/* ========== Button ========== */
+.button-client {
   background: rgb(190, 57, 70);
   color: #fff;
   border: none;
-  padding: 12px 0;
+  padding: 20px;
   font-size: 1.08rem;
   font-weight: 600;
   cursor: pointer;
@@ -37,7 +37,7 @@
   transition: background 0.2s, box-shadow 0.2s;
 }
 
-.back-button-client:hover {
+.button-client:hover {
   background: #8b0000;
 }
 

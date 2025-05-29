@@ -5,7 +5,7 @@ import AgregarCliente from "./components/functions/Agregar_Cliente";
 import AgregarServicio from "./components/functions/AgregarService";
 import KnowledgeBase from "./components/functions/KnowledgeBase";
 import Servicios from "./components/functions/Servicios";
-import All from "./components/functions/All";
+import ClienteBase from "./components/functions/ClienteBase";
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
         <Route path="/agregar-servicio" element={<AgregarServicio />} />
         <Route path="/knowledge-base" element={<KnowledgeBase />} />
         <Route path="/servicios" element={<Servicios />} />
-        <Route path="/all" element={<All />} />
+        <Route path="/cliente" element={<ClienteBase />} />
       </Routes>
     </Router>
   );

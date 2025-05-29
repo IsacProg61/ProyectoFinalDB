@@ -95,13 +95,13 @@ def actualizar_knowledge(request):
         return jsonify({"error": str(e)}), 500
 
 # Función para ver el conocimiento almacenado
-def ver_knowledge(request):
+def ver_knowledge():
     try:
         conn = conectar_db()
         cursor = conn.cursor()
         cursor.execute("""
             SELECT id_cliente, id_servicio, TO_CHAR(fecha_salida, 'YYYY-MM-DD'), solucion
-            FROM servicios_hechos
+            FROM ADMIN.servicios_hechos
             ORDER BY fecha_salida DESC
         """)
         registros = []
